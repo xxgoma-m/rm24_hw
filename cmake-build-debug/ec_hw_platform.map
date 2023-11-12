@@ -1235,6 +1235,19 @@ Discarded input sections
  .comment       0x0000000000000000       0x44 CMakeFiles/ec_hw_platform.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.c.obj
  .ARM.attributes
                 0x0000000000000000       0x2e CMakeFiles/ec_hw_platform.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.c.obj
+ .text          0x0000000000000000        0x0 CMakeFiles/ec_hw_platform.elf.dir/Src/remote_control.c.obj
+ .data          0x0000000000000000        0x0 CMakeFiles/ec_hw_platform.elf.dir/Src/remote_control.c.obj
+ .bss           0x0000000000000000        0x0 CMakeFiles/ec_hw_platform.elf.dir/Src/remote_control.c.obj
+ .bss.rc        0x0000000000000000        0xa CMakeFiles/ec_hw_platform.elf.dir/Src/remote_control.c.obj
+ .debug_info    0x0000000000000000       0xfd CMakeFiles/ec_hw_platform.elf.dir/Src/remote_control.c.obj
+ .debug_abbrev  0x0000000000000000       0x69 CMakeFiles/ec_hw_platform.elf.dir/Src/remote_control.c.obj
+ .debug_aranges
+                0x0000000000000000       0x18 CMakeFiles/ec_hw_platform.elf.dir/Src/remote_control.c.obj
+ .debug_line    0x0000000000000000      0x15c CMakeFiles/ec_hw_platform.elf.dir/Src/remote_control.c.obj
+ .debug_str     0x0000000000000000      0x1d8 CMakeFiles/ec_hw_platform.elf.dir/Src/remote_control.c.obj
+ .comment       0x0000000000000000       0x44 CMakeFiles/ec_hw_platform.elf.dir/Src/remote_control.c.obj
+ .ARM.attributes
+                0x0000000000000000       0x2e CMakeFiles/ec_hw_platform.elf.dir/Src/remote_control.c.obj
  .data          0x0000000000000000        0x0 C:/ST/STM32CubeCLT/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/11.3.1/thumb/v7e-m/nofp\libgcc.a(_aeabi_uldivmod.o)
  .bss           0x0000000000000000        0x0 C:/ST/STM32CubeCLT/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/11.3.1/thumb/v7e-m/nofp\libgcc.a(_aeabi_uldivmod.o)
  .data          0x0000000000000000        0x0 C:/ST/STM32CubeCLT/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/11.3.1/thumb/v7e-m/nofp\libgcc.a(_udivmoddi4.o)
@@ -1740,6 +1753,7 @@ LOAD CMakeFiles/ec_hw_platform.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4x
 LOAD CMakeFiles/ec_hw_platform.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj
 LOAD CMakeFiles/ec_hw_platform.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
 LOAD CMakeFiles/ec_hw_platform.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.c.obj
+LOAD CMakeFiles/ec_hw_platform.elf.dir/Src/remote_control.c.obj
 START GROUP
 LOAD C:/ST/STM32CubeCLT/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/11.3.1/thumb/v7e-m/nofp\libgcc.a
 LOAD C:/ST/STM32CubeCLT/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libg.a
