@@ -29,3 +29,4 @@ struct rc{
 };
 
 void handle_rc(struct rc *rc1);
+void handle_led(uint8_t a);

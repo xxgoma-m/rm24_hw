@@ -87,8 +87,14 @@ void Error_Handler(void);
 #define TIM3_CH3_GPIO_Port GPIOC
 #define TIM8_CH1_Pin GPIO_PIN_6
 #define TIM8_CH1_GPIO_Port GPIOC
+#define LED_R_Pin GPIO_PIN_12
+#define LED_R_GPIO_Port GPIOH
 #define ADC_BAT_Pin GPIO_PIN_10
 #define ADC_BAT_GPIO_Port GPIOF
+#define LED_G_Pin GPIO_PIN_11
+#define LED_G_GPIO_Port GPIOH
+#define LED_B_Pin GPIO_PIN_10
+#define LED_B_GPIO_Port GPIOH
 #define TIM4_CH3_Pin GPIO_PIN_14
 #define TIM4_CH3_GPIO_Port GPIOD
 #define KEY_Pin GPIO_PIN_0

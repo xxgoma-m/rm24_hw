@@ -23,4 +23,31 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size){
 
 void handle_rc(struct rc *rc1){
     uint8_t a = 0;
+    uint8_t state = 0;
+
+    if (state == 0){
+        if (rc1->ch0 > 1354){
+            state = 1;
+            a = 1;
+        } else if(rc1->ch0 < 694){
+            state = 3;
+            a = 2;
+        }
+    } else if(state == 1 || state == 3){
+        state = 2;
+        a = 0;
+    } else if(state == 2){
+        if (rc1->ch0 > 694 && rc1->ch0 < 1354){
+            state = 0;
+        }
+    } else{
+        state = 0;
+        a = 0;
+    }
+
+    handle_led(a);
+}
+
+void handle_led(uint8_t a){
+
 }

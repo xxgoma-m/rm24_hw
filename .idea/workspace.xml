@@ -20,20 +20,25 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="00d97684-c15d-4b1b-9f3b-bb77c586ff2b" name="Changes" comment="fix: led dbus">
-      <change afterPath="$PROJECT_DIR$/Src/remote_control.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Src/remote_control.h" afterDir="false" />
+    <list default="true" id="00d97684-c15d-4b1b-9f3b-bb77c586ff2b" name="Changes" comment="add: unpack data">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-077091afd28d93a1b46e.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-488db03c97a90ad7570c.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2023-11-12T05-52-25-0820.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-ec_hw_platform.elf-Debug-e862efea7455fde6c8f4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Inc/main.h" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Inc/main.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Src/iwdg.c" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Src/iwdg.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Src/tim.c" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Src/tim.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/remote_control.c" beforeDir="false" afterPath="$PROJECT_DIR$/Src/remote_control.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/remote_control.h" beforeDir="false" afterPath="$PROJECT_DIR$/Src/remote_control.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.26.4/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.26.4/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.26.4/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.26.4/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeConfigureLog.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeConfigureLog.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ec_hw_platform.elf.dir/Core/Src/iwdg.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ec_hw_platform.elf.dir/Core/Src/iwdg.c.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ec_hw_platform.elf.dir/Core/Src/tim.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ec_hw_platform.elf.dir/Core/Src/tim.c.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/ec_hw_platform.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/ec_hw_platform.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/ec_hw_platform.elf" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/ec_hw_platform.elf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/ec_hw_platform.hex" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/ec_hw_platform.hex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/ec_hw_platform.map" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/ec_hw_platform.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ec_hw_platform.ioc" beforeDir="false" afterPath="$PROJECT_DIR$/ec_hw_platform.ioc" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +117,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1699767946154</updated>
-      <workItem from="1699767947634" duration="7930000" />
+      <workItem from="1699767947634" duration="11167000" />
     </task>
     <task id="LOCAL-00001" summary="fix: led dbus">
       <option name="closed" value="true" />
@@ -122,7 +127,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699768551892</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add: unpack data">
+      <option name="closed" value="true" />
+      <created>1699783391783</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1699783391783</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -159,6 +172,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fix: led dbus" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: led dbus" />
+    <MESSAGE value="add: unpack data" />
+    <option name="LAST_COMMIT_MESSAGE" value="add: unpack data" />
   </component>
 </project>
