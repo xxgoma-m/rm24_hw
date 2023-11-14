@@ -72,6 +72,8 @@ int main(void)
 {
   /* USER CODE BEGIN 1 */
 
+  uint8_t RxData[1];
+
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -108,12 +110,19 @@ int main(void)
   MX_USART3_UART_Init();
   /* USER CODE BEGIN 2 */
 
+  HAL_UART_Receive_IT(&huart3, RxData, 1);
+  HAL_TIM_Base_Start_IT(&htim5);
+  HAL_TIM_PWM_Start_IT(&htim5, TIM_CHANNEL_1);
+  HAL_TIM_PWM_Start_IT(&htim5, TIM_CHANNEL_2);
+  HAL_TIM_PWM_Start_IT(&htim5, TIM_CHANNEL_3);
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+      TIM5->CCR1 = 15;
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
