@@ -6,8 +6,9 @@
 #include "remote_control.h"
 #include "usart.h"
 #include "tim.h"
+#include "iwdg.h"
 
-void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size){
+/*void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size){
     TIM5->CCR3 = 15;
     if (huart->Instance == huart3.Instance){
 
@@ -25,22 +26,24 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size){
 
         handle_rc(&rc1);
     }
-}
-
-void HAL_UART_RxCpltCallback(UART_HandleTypeDef* huart) {
+}*/
+struct rc RC1;
+uint8_t rx_data_[18];
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef* huart){
+    HAL_IWDG_Refresh(&hiwdg);
     if (huart->Instance == huart3.Instance){
-        struct rc rc1;
-        uint8_t rx_data_[6];
-        HAL_UART_Receive_IT(huart, rx_data_, 18);
 
-        rc1.ch0 = (rx_data_[0] | rx_data_[1] << 8) & 0x07ff;
-        rc1.ch1 = (rx_data_[1] >> 3 | rx_data_[2] << 5) & 0x07ff;
-        rc1.ch2 = (rx_data_[2] >> 6 | rx_data_[3] << 2 | rx_data_[4] << 10) & 0x07ff;
-        rc1.ch3 = (rx_data_[4] >> 1 | rx_data_[5] << 7) & 0x07ff;
-        rc1.s1 = (rx_data_[5] >> 4) & 0x03;
-        rc1.s2 = (rx_data_[5] >> 6) & 0x03;
 
-        handle_rc(&rc1);
+        HAL_UART_Receive_IT(huart, rx_data_ + 1, 18);
+
+        RC1.ch0 = (rx_data_[0] | rx_data_[1] << 8) & 0x07ff;
+        RC1.ch1 = (rx_data_[1] >> 3 | rx_data_[2] << 5) & 0x07ff;
+        RC1.ch2 = (rx_data_[2] >> 6 | rx_data_[3] << 2 | rx_data_[4] << 10) & 0x07ff;
+        RC1.ch3 = (rx_data_[4] >> 1 | rx_data_[5] << 7) & 0x07ff;
+        RC1.s1 = (rx_data_[5] >> 3) & 0x03;
+        RC1.s2 = (rx_data_[5] >> 4) & 0x03;
+
+        handle_rc(&RC1);
     }
 }
 
@@ -48,16 +51,22 @@ void handle_rc(struct rc *rc1){
     uint8_t a = 0;
     static uint8_t state = 0;
 
-    if (rc1->s1 == 0x00){
-        TIM5->CCR2 = 50;
-    } else if(rc1->s1 == 0x01){
-        TIM5->CCR2 = 25;
-    } else if(rc1->s1 == 0x02){
-        TIM5->CCR2 = 35;
-    } else if(rc1->s1 == 0x03){
-        TIM5->CCR2 = 45;
-    } else{
+    if (rc1->s2 == 0x01){
+        TIM5->CCR1 = 15;
         TIM5->CCR2 = 0;
+        TIM5->CCR3 = 0;
+    } else if (rc1->s2 == 0x02){
+        TIM5->CCR2 = 15;
+        TIM5->CCR1 = 0;
+        TIM5->CCR3 = 0;
+    } else if (rc1->s2 == 0x03){
+        TIM5->CCR3 = 15;
+        TIM5->CCR1 = 0;
+        TIM5->CCR2 = 0;
+    } else{
+        TIM5->CCR1 = 15;
+        TIM5->CCR2 = 15;
+        TIM5->CCR3 = 15;
     }
 
     /*if (state == 0){
