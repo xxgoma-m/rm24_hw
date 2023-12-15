@@ -404,6 +404,36 @@
               <FileType>5</FileType>
               <FilePath>..\Src\remote_control.h</FilePath>
             </File>
+            <File>
+              <FileName>Callback.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\Callback.c</FilePath>
+            </File>
+            <File>
+              <FileName>Callback.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Src\Callback.h</FilePath>
+            </File>
+            <File>
+              <FileName>Led.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\Led.c</FilePath>
+            </File>
+            <File>
+              <FileName>Led.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Src\Led.h</FilePath>
+            </File>
+            <File>
+              <FileName>Robot.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\Robot.c</FilePath>
+            </File>
+            <File>
+              <FileName>Robot.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Src\Robot.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

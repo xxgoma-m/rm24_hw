@@ -2,99 +2,69 @@
 // Created by 69333 on 2023/11/12.
 //
 
-#include "main.h"
 #include "remote_control.h"
-#include "usart.h"
-#include "tim.h"
-#include "iwdg.h"
 
-/*void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size){
-    TIM5->CCR3 = 15;
-    if (huart->Instance == huart3.Instance){
-
-        struct rc rc1;
-        uint8_t rx_data_[18];
-
-        HAL_UARTEx_ReceiveToIdle_IT(huart, rx_data_, Size);
-
-        rc1.ch0 = (rx_data_[0] | rx_data_[1] << 8) & 0x07ff;
-        rc1.ch1 = (rx_data_[1] >> 3 | rx_data_[2] << 5) & 0x07ff;
-        rc1.ch2 = (rx_data_[2] >> 6 | rx_data_[3] << 2 | rx_data_[4] << 10) & 0x07ff;
-        rc1.ch3 = (rx_data_[4] >> 1 | rx_data_[5] << 7) & 0x07ff;
-        rc1.s1 = (rx_data_[5] >> 4) & 0x03;
-        rc1.s2 = (rx_data_[5] >> 6) & 0x03;
-
-        handle_rc(&rc1);
-    }
-}*/
+extern uint8_t rx_buffer_[18];
 struct rc RC1;
 uint8_t rx_data_[18];
-void HAL_UART_RxCpltCallback(UART_HandleTypeDef* huart){
-    HAL_IWDG_Refresh(&hiwdg);
-    if (huart->Instance == huart3.Instance){
 
+void rc_handle_data(){
+    RC1.IWDG_cnt = 0;
+    memcpy(rx_data_, rx_buffer_, 18);
+    RC1.ch0 = (rx_data_[0] | rx_data_[1] << 8) & 0x07ff;
+    RC1.ch1 = (rx_data_[1] >> 3 | rx_data_[2] << 5) & 0x07ff;
+    RC1.ch2 = (rx_data_[2] >> 6 | rx_data_[3] << 2 | rx_data_[4] << 10) & 0x07ff;
+    RC1.ch3 = (rx_data_[4] >> 1 | rx_data_[5] << 7) & 0x07ff;
+    RC1.s1 = 0;
+    RC1.s2 = (rx_data_[5] >> 4 & 0x03);
+    //RC1.s1 = (rx_data_[5] >> 4 & 0x03);
+    //RC1.s2 = (rx_data_[5] >> 4 & 0x0C) >> 2;
 
-        HAL_UART_Receive_IT(huart, rx_data_ + 1, 18);
-
-        RC1.ch0 = (rx_data_[0] | rx_data_[1] << 8) & 0x07ff;
-        RC1.ch1 = (rx_data_[1] >> 3 | rx_data_[2] << 5) & 0x07ff;
-        RC1.ch2 = (rx_data_[2] >> 6 | rx_data_[3] << 2 | rx_data_[4] << 10) & 0x07ff;
-        RC1.ch3 = (rx_data_[4] >> 1 | rx_data_[5] << 7) & 0x07ff;
-        RC1.s1 = (rx_data_[5] >> 3) & 0x03;
-        RC1.s2 = (rx_data_[5] >> 4) & 0x03;
-
-        handle_rc(&RC1);
+    if (RC1.s2 == UP){
+        RC1.inputmode = REMOTE_INPUT;
+    } else if (RC1.s2 == MIDDLE){
+        RC1.inputmode = KEY_MOUSE_INPUT;
+    } else{
+        RC1.inputmode = STOP;
     }
 }
 
-void handle_rc(struct rc *rc1){
-    uint8_t a = 0;
-    static uint8_t state = 0;
-
-    if (rc1->s2 == 0x01){
-        TIM5->CCR1 = 15;
-        TIM5->CCR2 = 0;
-        TIM5->CCR3 = 0;
-    } else if (rc1->s2 == 0x02){
-        TIM5->CCR2 = 15;
-        TIM5->CCR1 = 0;
-        TIM5->CCR3 = 0;
-    } else if (rc1->s2 == 0x03){
-        TIM5->CCR3 = 15;
-        TIM5->CCR1 = 0;
-        TIM5->CCR2 = 0;
-    } else{
-        TIM5->CCR1 = 15;
-        TIM5->CCR2 = 15;
-        TIM5->CCR3 = 15;
+void rc_handle_channel(){
+    RC1.right_yaw = ((float)RC1.ch0 - 1024) / 660;
+    RC1.right_pitch = ((float)RC1.ch1 - 1024) / 660;
+    RC1.left_yaw = ((float)RC1.ch2 - 1024) / 660;
+    RC1.left_pitch = ((float)RC1.ch3 - 1024) / 660;
+    //boundary
+    if (RC1.right_yaw > 1){
+        RC1.right_yaw = 1;
+    } else if (RC1.right_yaw < -1){
+        RC1.right_yaw = -1;
     }
-
-    /*if (state == 0){
-        if (rc1->ch0 > 1354){
-            state = 1;
-            a = 1;
-        } else if(rc1->ch0 < 694){
-            state = 3;
-            a = 2;
-        }
-    } else if(state == 1 || state == 3){
-        state = 2;
-        a = 0;
-    } else if(state == 2){
-        if (rc1->ch0 > 694 && rc1->ch0 < 1354){
-            state = 0;
-        }
-    } else{
-        state = 0;
-        a = 0;
-    }*/
-    //handle_led(a);
+    if (RC1.right_pitch > 1){
+        RC1.right_pitch = 1;
+    } else if (RC1.right_pitch < -1){
+        RC1.right_pitch = -1;
+    }
+    if (RC1.left_yaw > 1){
+        RC1.left_yaw = 1;
+    } else if (RC1.left_yaw < -1){
+        RC1.left_yaw = -1;
+    }
+    if (RC1.left_pitch > 1){
+        RC1.left_pitch = 1;
+    } else if (RC1.left_pitch < -1){
+        RC1.left_pitch = -1;
+    }
 }
 
-void handle_led(uint8_t a){
-    if (a == 1){
-        TIM5->CCR2 += 10;
-    } else if(a == 2){
-        TIM5->CCR2 -= 10;
+void rc_IWDG_handle(){
+    if (RC1.IWDG_cnt < 1000){
+        RC1.IWDG_cnt++;
+    }
+    if (RC1.IWDG_cnt > 100){
+        RC1.inputmode = STOP;
+    }
+    if (RC1.IWDG_cnt < 100){
+        HAL_IWDG_Refresh(&hiwdg);
     }
 }

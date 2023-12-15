@@ -17,16 +17,37 @@
 #endif //EC_HW_PLATFORM_REMOTE_CONTROL_H
 
 #include "main.h"
+#include "usart.h"
+#include "tim.h"
+#include "iwdg.h"
+#include <string.h>
 
 /* ----------------------- Data Struct ------------------------------------- */
+enum INPUT_MODE
+{
+    REMOTE_INPUT = 1,
+    KEY_MOUSE_INPUT = 3,
+    STOP = 2,
+};
+enum SWITCH
+{
+    UP = 1,
+    MIDDLE = 3,
+    DOWN = 2
+};
 struct rc{
     uint16_t ch0;
     uint16_t ch1;
     uint16_t ch2;
     uint16_t ch3;
-    uint8_t s1;
-    uint8_t s2;
+    enum SWITCH s1, s2;
+    float right_yaw;
+    float right_pitch;
+    float left_yaw;
+    float left_pitch;
+    uint16_t IWDG_cnt;
+    enum INPUT_MODE inputmode;
 };
-
-void handle_rc(struct rc *rc1);
-void handle_led(uint8_t a);
+void rc_handle_data(void);
+void rc_handle_channel(void);
+void rc_IWDG_handle(void);

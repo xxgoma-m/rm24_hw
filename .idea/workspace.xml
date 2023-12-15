@@ -20,14 +20,31 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="00d97684-c15d-4b1b-9f3b-bb77c586ff2b" name="Changes" comment="add: unknown callback on but data seems all 0s">
+    <list default="true" id="00d97684-c15d-4b1b-9f3b-bb77c586ff2b" name="Changes" comment="add: s2 completed for no reason rx_data_ seems ok">
+      <change afterPath="$PROJECT_DIR$/Src/Callback.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Src/Callback.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Src/Led.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Src/Led.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Src/PID.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Src/PID.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Src/Robot.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Src/Robot.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/OCD_ec_hw_platform.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/OCD_ec_hw_platform.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Core/Src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Src/main.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MDK-ARM/ec_hw_platform.uvoptx" beforeDir="false" afterPath="$PROJECT_DIR$/MDK-ARM/ec_hw_platform.uvoptx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MDK-ARM/ec_hw_platform.uvprojx" beforeDir="false" afterPath="$PROJECT_DIR$/MDK-ARM/ec_hw_platform.uvprojx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Src/remote_control.c" beforeDir="false" afterPath="$PROJECT_DIR$/Src/remote_control.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/remote_control.h" beforeDir="false" afterPath="$PROJECT_DIR$/Src/remote_control.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ec_hw_platform.elf.dir/Core/Src/main.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ec_hw_platform.elf.dir/Core/Src/main.c.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ec_hw_platform.elf.dir/Core/Src/tim.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ec_hw_platform.elf.dir/Core/Src/tim.c.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rules.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/ec_hw_platform.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/ec_hw_platform.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/ec_hw_platform.elf" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/ec_hw_platform.elf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/ec_hw_platform.hex" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/ec_hw_platform.hex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/ec_hw_platform.map" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/ec_hw_platform.map" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +98,7 @@
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "D:/GitHub/RM_frame_2023",
+    "last_opened_file_path": "D:/CLionProjects/ec_hw_platform",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -118,7 +135,11 @@
       <workItem from="1699767947634" duration="11475000" />
       <workItem from="1699962113687" duration="97000" />
       <workItem from="1699962219076" duration="10119000" />
-      <workItem from="1700131442710" duration="10257000" />
+      <workItem from="1700131442710" duration="13932000" />
+      <workItem from="1701607406804" duration="8465000" />
+      <workItem from="1702044732101" duration="5844000" />
+      <workItem from="1702207907746" duration="8784000" />
+      <workItem from="1702642228607" duration="271000" />
     </task>
     <task id="LOCAL-00001" summary="fix: led dbus">
       <option name="closed" value="true" />
@@ -152,7 +173,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699974253896</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add: s2 completed for no reason rx_data_ seems ok">
+      <option name="closed" value="true" />
+      <created>1700144186895</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1700144186895</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -192,6 +221,7 @@
     <MESSAGE value="add: unpack data" />
     <MESSAGE value="add: handle_rc" />
     <MESSAGE value="add: unknown callback on but data seems all 0s" />
-    <option name="LAST_COMMIT_MESSAGE" value="add: unknown callback on but data seems all 0s" />
+    <MESSAGE value="add: s2 completed for no reason rx_data_ seems ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="add: s2 completed for no reason rx_data_ seems ok" />
   </component>
 </project>
