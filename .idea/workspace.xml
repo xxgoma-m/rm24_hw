@@ -20,31 +20,40 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="00d97684-c15d-4b1b-9f3b-bb77c586ff2b" name="Changes" comment="add: s2 completed for no reason rx_data_ seems ok">
-      <change afterPath="$PROJECT_DIR$/Src/Callback.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Src/Callback.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Src/Led.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Src/Led.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Src/PID.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Src/PID.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Src/Robot.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Src/Robot.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/OCD_ec_hw_platform.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/OCD_ec_hw_platform.xml" afterDir="false" />
+    <list default="true" id="00d97684-c15d-4b1b-9f3b-bb77c586ff2b" name="Changes" comment="add: PID">
+      <change afterPath="$PROJECT_DIR$/Src/Control/motor_conrtol.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Src/Control/motor_conrtol.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Src/Control/rc_task.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Src/Control/rc_task.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Inc/main.h" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Inc/main.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Core/Src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Src/main.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MDK-ARM/ec_hw_platform.uvoptx" beforeDir="false" afterPath="$PROJECT_DIR$/MDK-ARM/ec_hw_platform.uvoptx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MDK-ARM/ec_hw_platform.uvprojx" beforeDir="false" afterPath="$PROJECT_DIR$/MDK-ARM/ec_hw_platform.uvprojx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Src/remote_control.c" beforeDir="false" afterPath="$PROJECT_DIR$/Src/remote_control.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/Callback.c" beforeDir="false" afterPath="$PROJECT_DIR$/Src/Callback.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/Callback.h" beforeDir="false" afterPath="$PROJECT_DIR$/Src/Callback.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/Led.c" beforeDir="false" afterPath="$PROJECT_DIR$/Src/Control/Led.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/Led.h" beforeDir="false" afterPath="$PROJECT_DIR$/Src/Control/Led.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/Motor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Src/Motor.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/Motor.h" beforeDir="false" afterPath="$PROJECT_DIR$/Src/Motor.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/PID.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Src/PID.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/PID.h" beforeDir="false" afterPath="$PROJECT_DIR$/Src/PID.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/Robot.c" beforeDir="false" afterPath="$PROJECT_DIR$/Src/Robot.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/Robot.h" beforeDir="false" afterPath="$PROJECT_DIR$/Src/Robot.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/remote_control.c" beforeDir="false" afterPath="$PROJECT_DIR$/Src/remote_control.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Src/remote_control.h" beforeDir="false" afterPath="$PROJECT_DIR$/Src/remote_control.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.26.4/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.26.4/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.26.4/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.26.4/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeConfigureLog.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeConfigureLog.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ec_hw_platform.elf.dir/Core/Src/main.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ec_hw_platform.elf.dir/Core/Src/main.c.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rules.ninja" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/ec_hw_platform.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/ec_hw_platform.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/ec_hw_platform.elf" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/ec_hw_platform.elf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/ec_hw_platform.hex" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/ec_hw_platform.hex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/ec_hw_platform.map" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/ec_hw_platform.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ec_hw_platform.ioc" beforeDir="false" afterPath="$PROJECT_DIR$/ec_hw_platform.ioc" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,33 +96,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "D:/CLionProjects/ec_hw_platform",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.C/C++",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/CLionProjects/ec_hw_platform&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.C/C++&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\CLionProjects\ec_hw_platform\Src\Control" />
       <recent name="D:\CLionProjects\ec_hw_platform\Src" />
       <recent name="D:\CLionProjects\ec_hw_platform\Core\Inc" />
     </key>
   </component>
   <component name="RunManager" selected="OpenOCD Download &amp; Run.OCD ec_hw_platform">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ec_hw_platform.elf" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ec_hw_platform" TARGET_NAME="ec_hw_platform.elf" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ec_hw_platform" RUN_TARGET_NAME="ec_hw_platform.elf">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -139,7 +154,12 @@
       <workItem from="1701607406804" duration="8465000" />
       <workItem from="1702044732101" duration="5844000" />
       <workItem from="1702207907746" duration="8784000" />
-      <workItem from="1702642228607" duration="271000" />
+      <workItem from="1702642228607" duration="8308000" />
+      <workItem from="1702706323465" duration="10137000" />
+      <workItem from="1702808697972" duration="4387000" />
+      <workItem from="1702813136929" duration="118000" />
+      <workItem from="1702813265953" duration="507000" />
+      <workItem from="1702813872664" duration="4326000" />
     </task>
     <task id="LOCAL-00001" summary="fix: led dbus">
       <option name="closed" value="true" />
@@ -181,7 +201,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700144186895</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="add: PID">
+      <option name="closed" value="true" />
+      <created>1702642615246</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1702642615246</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -222,6 +250,7 @@
     <MESSAGE value="add: handle_rc" />
     <MESSAGE value="add: unknown callback on but data seems all 0s" />
     <MESSAGE value="add: s2 completed for no reason rx_data_ seems ok" />
-    <option name="LAST_COMMIT_MESSAGE" value="add: s2 completed for no reason rx_data_ seems ok" />
+    <MESSAGE value="add: PID" />
+    <option name="LAST_COMMIT_MESSAGE" value="add: PID" />
   </component>
 </project>

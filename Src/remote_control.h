@@ -14,9 +14,6 @@
 #define RC_SW_MID ((uint16_t)3)
 #define RC_SW_DOWN ((uint16_t)2)
 
-#endif //EC_HW_PLATFORM_REMOTE_CONTROL_H
-
-#include "main.h"
 #include "usart.h"
 #include "tim.h"
 #include "iwdg.h"
@@ -40,7 +37,7 @@ struct rc{
     uint16_t ch1;
     uint16_t ch2;
     uint16_t ch3;
-    enum SWITCH s1, s2;
+    uint8_t s1, s2;
     float right_yaw;
     float right_pitch;
     float left_yaw;
@@ -48,6 +45,8 @@ struct rc{
     uint16_t IWDG_cnt;
     enum INPUT_MODE inputmode;
 };
-void rc_handle_data(void);
-void rc_handle_channel(void);
-void rc_IWDG_handle(void);
+void rc_handle_data();
+void rc_handle_channel();
+void rc_IWDG_handle();
+
+#endif //EC_HW_PLATFORM_REMOTE_CONTROL_H

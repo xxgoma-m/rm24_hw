@@ -2,8 +2,6 @@
 // Created by 69333 on 2023/12/8.
 //
 
-#include "main.h"
-#include "remote_control.h"
 #include "Led.h"
 
 void led(struct rc *rc1){

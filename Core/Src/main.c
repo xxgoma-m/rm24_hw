@@ -63,6 +63,41 @@ void SystemClock_Config(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
+// CAN1 send data
+uint8_t CAN_Send_Data(CAN_HandleTypeDef *hcan, uint16_t ID, uint8_t *Data, uint16_t Length) {
+    CAN_TxHeaderTypeDef  tx_header;
+    uint32_t used_mailbox;
+
+    assert_param(hcan != NULL);
+
+    tx_header.StdId = ID;
+    tx_header.ExtId = 0;
+    tx_header.IDE = 0;
+    tx_header.RTR = 0;
+    tx_header.DLC = Length;
+
+    return (HAL_CAN_AddTxMessage(hcan, &tx_header, Data, &used_mailbox));
+}
+
+// CAN filter initialize
+void canFilterInit(void) {
+    CAN_FilterTypeDef filter;
+    filter.FilterActivation = ENABLE;
+    filter.FilterMode = CAN_FILTERMODE_IDMASK;
+    filter.FilterScale = CAN_FILTERSCALE_32BIT;
+    filter.FilterIdHigh = 0x0000;
+    filter.FilterIdLow = 0x0000;
+    filter.FilterMaskIdHigh = 0x0000;
+    filter.FilterMaskIdLow = 0x0000;
+    filter.FilterFIFOAssignment = CAN_RX_FIFO0;
+    filter.SlaveStartFilterBank = 14;
+
+    filter.FilterBank = 0;
+    HAL_CAN_ConfigFilter(&hcan1, &filter);
+    HAL_CAN_Start(&hcan1);
+    HAL_CAN_ActivateNotification(&hcan1, CAN_IT_RX_FIFO0_MSG_PENDING);
+}
+
 /* USER CODE END 0 */
 
 /**
@@ -115,6 +150,7 @@ int main(void)
   HAL_TIM_PWM_Start_IT(&htim5, TIM_CHANNEL_1);
   HAL_TIM_PWM_Start_IT(&htim5, TIM_CHANNEL_2);
   HAL_TIM_PWM_Start_IT(&htim5, TIM_CHANNEL_3);
+  canFilterInit();
 
   /* USER CODE END 2 */
 

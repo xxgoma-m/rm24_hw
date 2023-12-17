@@ -4,15 +4,23 @@
 
 #include "PID.h"
 
-PID::PID(float kp, float ki, float kd, float i_max, float out_max) {
-    kp_ = kp;
-    ki_ = ki;
-    kd_ = kd;
-    i_max_ = i_max;
-    out_max_ = out_max;
+PID::PID(float kp, float ki, float kd, float i_max, float out_max)
+    :
+    kp_(kp),
+    ki_(ki),
+    kd_(kd),
+    i_max_(i_max),
+    out_max_(out_max)
+    {
     err_ = 0;
     err_sum_ = 0;
     last_err_ = 0;
+    output_ = 0;
+    ref_ = 0;
+    fdb_ = 0;
+    p_out_ = 0;
+    i_out_ = 0;
+    d_out_ = 0;
 }
 
 float PID::Calculate(float ref, float fdb) {
@@ -38,4 +46,13 @@ float PID::Calculate(float ref, float fdb) {
     }
 
     return output_;
+}
+
+void PID::Reset() {
+    err_ = 0;
+    err_sum_ = 0;
+    last_err_ = 0;
+    p_out_ = 0;
+    i_out_ = 0;
+    d_out_ = 0;
 }

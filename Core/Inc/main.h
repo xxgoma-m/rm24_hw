@@ -54,6 +54,9 @@ void Error_Handler(void);
 
 /* USER CODE BEGIN EFP */
 
+uint8_t CAN_Send_Data(CAN_HandleTypeDef *hcan, uint16_t ID, uint8_t *Data, uint16_t Length);
+void canFilterInit();
+
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/

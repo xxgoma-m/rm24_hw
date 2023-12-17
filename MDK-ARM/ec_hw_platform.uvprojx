@@ -330,7 +330,7 @@
             <uGnu>0</uGnu>
             <useXO>0</useXO>
             <v6Lang>3</v6Lang>
-            <v6LangP>5</v6LangP>
+            <v6LangP>3</v6LangP>
             <vShortEn>1</vShortEn>
             <vShortWch>1</vShortWch>
             <v6Lto>0</v6Lto>
@@ -395,19 +395,9 @@
           <GroupName>Src</GroupName>
           <Files>
             <File>
-              <FileName>remote_control.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Src\remote_control.c</FilePath>
-            </File>
-            <File>
               <FileName>remote_control.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\Src\remote_control.h</FilePath>
-            </File>
-            <File>
-              <FileName>Callback.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Src\Callback.c</FilePath>
             </File>
             <File>
               <FileName>Callback.h</FileName>
@@ -415,24 +405,74 @@
               <FilePath>..\Src\Callback.h</FilePath>
             </File>
             <File>
+              <FileName>Robot.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Src\Robot.h</FilePath>
+            </File>
+            <File>
+              <FileName>Callback.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\Src\Callback.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Motor.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\Src\Motor.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Motor.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Src\Motor.h</FilePath>
+            </File>
+            <File>
+              <FileName>PID.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\Src\PID.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>PID.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Src\PID.h</FilePath>
+            </File>
+            <File>
+              <FileName>Robot.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\Src\Robot.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>remote_control.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\Src\remote_control.cpp</FilePath>
+            </File>
+            <File>
               <FileName>Led.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Src\Led.c</FilePath>
+              <FilePath>..\Src\Control\Led.c</FilePath>
             </File>
             <File>
               <FileName>Led.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\Src\Led.h</FilePath>
+              <FilePath>..\Src\Control\Led.h</FilePath>
             </File>
             <File>
-              <FileName>Robot.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Src\Robot.c</FilePath>
+              <FileName>motor_conrtol.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\Src\Control\motor_conrtol.cpp</FilePath>
             </File>
             <File>
-              <FileName>Robot.h</FileName>
+              <FileName>motor_conrtol.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\Src\Robot.h</FilePath>
+              <FilePath>..\Src\Control\motor_conrtol.h</FilePath>
+            </File>
+            <File>
+              <FileName>rc_task.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\Src\Control\rc_task.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>rc_task.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Src\Control\rc_task.h</FilePath>
             </File>
           </Files>
         </Group>

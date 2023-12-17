@@ -5,9 +5,9 @@
 #ifndef EC_HW_PLATFORM_ROBOT_H
 #define EC_HW_PLATFORM_ROBOT_H
 
-#endif //EC_HW_PLATFORM_ROBOT_H
-
-#include "main.h"
-#include "remote_control.h"
+#include "can.h"
+#include "Control/rc_task.h"
 
 void MainControlLoop();
+
+#endif //EC_HW_PLATFORM_ROBOT_H
